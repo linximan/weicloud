@@ -1,0 +1,14 @@
+<view class="reply-container">
+  <navigator class="reply-item"  wx:key="{{replies._id}}" wx:for="{{ replies }}" url="/pages/detail/detail?id={{item.topic_id}}">
+    <image class="reply-ft reply-avatar" src="{{item.userInfo.avatarUrl}}"></image>
+    <view class="reply-bd">
+      <view class="reply-nickName">{{item.userInfo.nickName}}</view>
+      <view class="reply-content">{{item.content}}</view>
+      <view class="reply-info">
+        <text class="reply-reply-date">{{item.date_display}}</text>
+      </view>
+    </view>
+  </navigator>
+</view>
+
+<view wx:if="{{!replies.length}}" style="margin-top:200px;text-align:center;font-size:12px;color:#999;">木有数据</view>
